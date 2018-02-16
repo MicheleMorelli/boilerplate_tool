@@ -6,13 +6,20 @@ $Python3 boilerplate.py [file name]
 '''
 import sys
 
-files = ['boiler.txt', sys.argv[1],'end_boiler.txt']
-text = []
 
-for i in files:
+def main():
+        
+    files = ['boiler.txt', sys.argv[1],'end_boiler.txt']
+    text = []
+
+    for i in files:
         with open(i, 'r') as fh:
                 text.extend(fh.readlines())
-with open(sys.argv[1], 'w') as fh:
+    with open(sys.argv[1], 'w') as fh:
         for line in text:
-                fh.write(line)
-print ("done!")
+            fh.write(line)
+    print ("All Done!\n")
+
+
+if __name__ == '__name__':
+    main()
